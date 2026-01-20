@@ -22,6 +22,10 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/teacher', teacherRoutes);
 app.use('/api/student', studentRoutes);
 
+app.use((req, res) => {
+  res.status(404).json({ message: "API route not found" });
+});
+
 
 
 export default app;
